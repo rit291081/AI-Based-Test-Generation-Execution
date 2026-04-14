@@ -1,0 +1,12 @@
+{
+  "test_case_id": "TC_API_002",
+  "endpoint": "/api/v1/users",
+  "method": "GET",
+  "headers": {
+    "Authorization": "InvalidToken"
+  },
+  "expected_status": 401,
+  "expected_response": {
+    "error": "Unauthorized"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "test_case_id": "TC_PERF_001",
+  "scenario": "1000 concurrent users login",
+  "expected_output": {
+    "response_time": "< 2s",
+    "error_rate": "< 1%"
+  }
+}

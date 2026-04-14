@@ -1,0 +1,2 @@
+# Optional dependency for OpenAI-backed generation
+openai>=1.40.0

@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "source_title": "Create User API",
+    "source_endpoint": "/api/users",
+    "source_method": "POST"
+  },
+  "count": 3,
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "title": "Create User API - valid POST request succeeds",
+      "type": "positive",
+      "priority": "high",
+      "preconditions": [
+        "User is authenticated"
+      ],
+      "steps": [
+        "Send a valid POST request to /api/users",
+        "Include all required request fields",
+        "Verify response status and payload"
+      ],
+      "expected_result": "Request succeeds and returns the expected response payload.",
+      "data": {
+        "request": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "password": "Secret123!",
+          "role": "user"
+        }
+      },
+      "tags": [
+        "smoke",
+        "api",
+        "positive"
+      ]
+    },
+    {
+      "id": "TC-002",
+      "title": "Create User API - missing required field returns validation error",
+      "type": "negative",
+      "priority": "high",
+      "preconditions": [
+        "User is authenticated"
+      ],
+      "steps": [
+        "Send a POST request to /api/users with a required field removed",
+        "Verify validation response"
+      ],
+      "expected_result": "API returns a validation error for missing required fields.",
+      "data": {
+        "missing_field": "required"
+      },
+      "tags": [
+        "negative",
+        "validation",
+        "api"
+      ]
+    },
+    {
+      "id": "TC-003",
+      "title": "Create User API - boundary condition around constraints",
+      "type": "edge",
+      "priority": "medium",
+      "preconditions": [
+        "User is authenticated"
+      ],
+      "steps": [
+        "Submit edge-case values for /api/users",
+        "Verify the system handles boundary input correctly"
+      ],
+      "expected_result": "Boundary values are handled according to product rules.",
+      "data": {
+        "constraints": [
+          "Email must be unique",
+          "Password must be at least 8 characters",
+          "Role must be one of user, admin"
+        ]
+      },
+      "tags": [
+        "edge",
+        "boundary",
+        "api"
+      ]
+    }
+  ]
+}

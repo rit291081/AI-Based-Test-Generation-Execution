@@ -1,0 +1,54 @@
+{
+  "service_name": "Create User API",
+  "method": "POST",
+  "endpoint": "/users",
+  "auth_required": true,
+  "auth_header_name": "Authorization",
+  "auth_header_value_example": "Bearer demo-token",
+  "response_codes": {
+    "success": 201,
+    "validation_error": 400,
+    "unauthorized": 401,
+    "duplicate_email": 400
+  },
+  "request_schema": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "min_length": 1,
+      "max_length": 256
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "format": "email"
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "min_length": 8
+    },
+    "role": {
+      "type": "enum",
+      "required": true,
+      "allowed_values": ["user", "admin"]
+    }
+  },
+  "seed_data": {
+    "existing_users": [
+      {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "password": "SeedPass123!",
+        "role": "user"
+      }
+    ]
+  },
+  "generation_rules": [
+    "Generate only tests derived from the explicit schema and rules in this file.",
+    "Use seed_data for duplicate-email test cases.",
+    "Do not invent extra fields or headers.",
+    "Generate one auth-negative test where the Authorization header is omitted.",
+    "Use 400 for validation failures, 401 for missing auth, and 201 for success."
+  ]
+}

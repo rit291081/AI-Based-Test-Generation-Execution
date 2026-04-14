@@ -1,0 +1,17 @@
+{
+  "positive": [
+    "Valid name, email, age",
+    "Minimum valid age boundary",
+    "Maximum valid age boundary"
+  ],
+  "negative": [
+    "Missing email field",
+    "Invalid email format",
+    "Age as string"
+  ],
+  "edge": [
+    "Very long name input",
+    "Special characters in name",
+    "Duplicate email submission"
+  ]
+}

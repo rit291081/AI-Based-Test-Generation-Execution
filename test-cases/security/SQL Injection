@@ -1,0 +1,12 @@
+{
+  "test_case_id": "TC_SEC_001",
+  "scenario": "SQL Injection attempt",
+  "input": {
+    "username": "' OR 1=1 --",
+    "password": "test"
+  },
+  "expected_output": {
+    "status": "failure",
+    "error": "Invalid input detected"
+  }
+}

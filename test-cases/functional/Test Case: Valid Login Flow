@@ -1,0 +1,15 @@
+{
+  "test_case_id": "TC_FUNC_001",
+  "module": "Authentication",
+  "scenario": "Valid user login",
+  "input": {
+    "username": "test_user",
+    "password": "Valid@123"
+  },
+  "expected_output": {
+    "status": "success",
+    "message": "Login successful",
+    "redirect": "dashboard"
+  },
+  "priority": "High"
+}

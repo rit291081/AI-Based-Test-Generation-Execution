@@ -1,0 +1,10 @@
+{
+  "test_case_id": "TC_AI_001",
+  "scenario": "Generate test cases from user story",
+  "input_prompt": "User should be able to reset password using email",
+  "expected_output": {
+    "test_cases_generated": true,
+    "coverage": ["positive", "negative", "edge"],
+    "format": "structured_json"
+  }
+}
